@@ -1,6 +1,7 @@
 package me.brainbear.sample;
 
 import me.brainbear.array.Array;
+import me.brainbear.linked.LinkedList;
 
 public class Sample {
 
@@ -30,8 +31,47 @@ public class Sample {
         System.out.println("index 100:" + arr.index(100));
     }
 
+    private static void testLinkedList() {
+        LinkedList<Integer> list = new LinkedList<>();
+
+        for(int i = 0; i < 5; i++){
+            list.addHead(i);
+            System.out.println(list.toString());
+        }
+
+        for(int i = 5; i < 10; i++){
+            list.addTail(i);
+            System.out.println(list.toString());
+        }
+
+        for(int i = 10; i < 15; i++){
+            list.add(5, i);
+            System.out.println(list.toString());
+        }
+
+        System.out.println(list.index(0));
+        System.out.println(list.index(5));
+        System.out.println(list.index(15));
+
+        for(int i = 0; i < 5; i++){
+            list.remove(5);
+            System.out.println(list.toString());
+        }
+
+        for(int i = 0; i < 5; i++){
+            list.removeHead();
+            System.out.println(list.toString());
+        }
+
+        for(int i = 5; i < 10; i++){
+            list.removeTail();
+            System.out.println(list.toString());
+        }
+    }
+
     public static void main(String[] args) {
 
-        testArray();
+//        testArray();
+        testLinkedList();
     }
 }
