@@ -2,6 +2,7 @@ package me.brainbear.sample;
 
 import me.brainbear.array.Array;
 import me.brainbear.linked.LinkedList;
+import me.brainbear.stack.LinkedListStack;
 
 public class Sample {
 
@@ -49,6 +50,12 @@ public class Sample {
             System.out.println(list.toString());
         }
 
+
+        for(int i = 0; i < list.getSize(); i++){
+            System.out.print(list.get(i) + " ");
+        }
+        System.out.println();
+
         System.out.println(list.index(0));
         System.out.println(list.index(5));
         System.out.println(list.index(15));
@@ -69,9 +76,27 @@ public class Sample {
         }
     }
 
+
+    private static void testLinkedLinkStack() {
+        LinkedListStack<Integer> stack = new LinkedListStack<>();
+
+        for(int i = 1; i < 30; i++){
+            if(i % 3 == 0){
+                Integer pop = stack.pop();
+                System.out.println("pop: " + pop);
+            }else{
+                stack.push(i);
+                System.out.println("push: " + i);
+            }
+
+            System.out.println(stack.toString());
+        }
+    }
+
     public static void main(String[] args) {
 
 //        testArray();
-        testLinkedList();
+//        testLinkedList();
+        testLinkedLinkStack();
     }
 }

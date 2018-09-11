@@ -13,6 +13,19 @@ public class LinkedList<T> {
     }
 
 
+    public T get(int index) {
+        if (index < 0 || index > size) {
+            throw new IllegalArgumentException("illegal index:" + index);
+        }
+
+        Node<T> p = dummyHead.next;
+        for(int i = 0; i < index; i++) {
+            p = p.next;
+        }
+
+        return p.data;
+    }
+
     public void add(T t) {
         addTail(t);
     }
