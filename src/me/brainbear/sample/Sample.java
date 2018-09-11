@@ -2,6 +2,7 @@ package me.brainbear.sample;
 
 import me.brainbear.array.Array;
 import me.brainbear.linked.LinkedList;
+import me.brainbear.queue.LinkedListQueue;
 import me.brainbear.stack.LinkedListStack;
 
 public class Sample {
@@ -93,10 +94,27 @@ public class Sample {
         }
     }
 
+    private static void testLinkedListQueue() {
+        LinkedListQueue<Integer> linkedListQueue = new LinkedListQueue<>();
+
+        for(int i = 1; i < 30; i++){
+            if(i % 3 == 0){
+                Integer pop = linkedListQueue.dequeue();
+                System.out.println("dequeue: " + pop);
+            }else{
+                linkedListQueue.enqueue(i);
+                System.out.println("enqueue: " + i);
+            }
+
+            System.out.println(linkedListQueue.toString());
+        }
+    }
+
     public static void main(String[] args) {
 
 //        testArray();
 //        testLinkedList();
-        testLinkedLinkStack();
+//        testLinkedLinkStack();
+        testLinkedListQueue();
     }
 }
