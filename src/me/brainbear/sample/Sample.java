@@ -4,6 +4,11 @@ import me.brainbear.array.Array;
 import me.brainbear.linked.LinkedList;
 import me.brainbear.queue.LinkedListQueue;
 import me.brainbear.stack.LinkedListStack;
+import me.brainbear.tree.BinarySearchTree;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Sample {
 
@@ -110,11 +115,61 @@ public class Sample {
         }
     }
 
+    private static void testBinarySearchTree() {
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+
+        int[] nums = new int[]{5, 3, 6, 8, 4, 2};
+        for(int i : nums){
+            tree.add(i);
+        }
+        List<Integer> list = tree.preOrder();
+        System.out.println(list);
+
+        list = tree.inOrder();
+        System.out.println(list);
+
+        list = tree.postOrder();
+        System.out.println(list);
+
+        list = tree.levelOrder();
+        System.out.println(list);
+
+
+        Random random = new Random();
+        list = new ArrayList<>(100);
+
+        for(int i = 0; i < 100; i++){
+            list.add(random.nextInt(100));
+        }
+
+        BinarySearchTree<Integer> tree1 = new BinarySearchTree<>();
+        for(int i : list) {
+            tree1.add(i);
+        }
+
+       while (!tree1.isEmpty()){
+            System.out.print(tree1.removeMin() + " ");
+       }
+
+       System.out.println();
+
+        for(int i : list) {
+            tree1.add(i);
+        }
+
+        while (!tree1.isEmpty()){
+            System.out.print(tree1.removeMax() + " ");
+        }
+    }
+
+
+
     public static void main(String[] args) {
 
 //        testArray();
 //        testLinkedList();
 //        testLinkedLinkStack();
-        testLinkedListQueue();
+//        testLinkedListQueue();
+        testBinarySearchTree();
     }
 }
