@@ -214,7 +214,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
 
-    private void remove(T t) {
+    public void remove(T t) {
         if (size == 0) {
             throw new IllegalArgumentException("empty tree");
         }

@@ -3,6 +3,7 @@ package me.brainbear.sample;
 import me.brainbear.array.Array;
 import me.brainbear.linked.LinkedList;
 import me.brainbear.queue.LinkedListQueue;
+import me.brainbear.set.BinarySearchTreeSet;
 import me.brainbear.stack.LinkedListStack;
 import me.brainbear.tree.BinarySearchTree;
 
@@ -163,6 +164,19 @@ public class Sample {
     }
 
 
+    private static void testSet() {
+        BinarySearchTreeSet<Integer> set = new BinarySearchTreeSet<>();
+
+        Random random = new Random();
+        for(int i = 0; i< 20; i++){
+            int item = random.nextInt(10);
+            System.out.println("add item:" + item);
+            set.add(item);
+            System.out.println(set.toString());
+        }
+    }
+
+
 
     public static void main(String[] args) {
 
@@ -170,6 +184,7 @@ public class Sample {
 //        testLinkedList();
 //        testLinkedLinkStack();
 //        testLinkedListQueue();
-        testBinarySearchTree();
+//        testBinarySearchTree();
+        testSet();
     }
 }
