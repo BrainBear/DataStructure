@@ -6,6 +6,7 @@ import me.brainbear.linked.LinkedList;
 import me.brainbear.queue.LinkedListQueue;
 import me.brainbear.set.BinarySearchTreeSet;
 import me.brainbear.stack.LinkedListStack;
+import me.brainbear.tree.AVLTree;
 import me.brainbear.tree.BinarySearchTree;
 
 import java.util.ArrayList;
@@ -196,6 +197,19 @@ public class Sample {
     }
 
 
+    private static void testAVLTree() {
+        AVLTree<Integer> avlTree = new AVLTree<>();
+        Random random = new Random();
+
+        int count = 20;
+        for(int i = 0; i < count; i++){
+            avlTree.add(random.nextInt(20));
+            System.out.println(avlTree.toString());
+        }
+
+    }
+
+
     public static void main(String[] args) {
 
 //        testArray();
@@ -204,6 +218,7 @@ public class Sample {
 //        testLinkedListQueue();
 //        testBinarySearchTree();
 //        testSet();
-        testHeap();
+//        testHeap();
+        testAVLTree();
     }
 }
